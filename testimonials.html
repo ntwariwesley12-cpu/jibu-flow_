@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibu Flow Water</title>
+    <meta name="description" content="Read what our customers say about Jibu Flow water. Real reviews from satisfied customers across Rwanda. Pure water, great service, fast delivery.">
+    <meta name="keywords" content="Jibu Flow reviews, customer testimonials, water delivery reviews Rwanda, bottled water feedback">
+
+    <link rel="stylesheet" href="professional.css">
+    <link rel="stylesheet" href="product-style.css">
+    <link rel="stylesheet" href="ai-helper.css">
+    <style>
+        .order-modal-content .form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .order-modal-content .form-group input,
+        .order-modal-content .form-group textarea,
+        .order-modal-content .form-group select {
+            font-size: 1rem;
+            padding: 0.75rem;
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/jibu-flow" class="logo-link">
+                    <img src="assets/logo.svg" alt="Jibu Flow" class="site-logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/jibu-flow" data-i18n="nav_home">Home</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                <li><a href="testimonials.html" class="active" data-i18n="nav_reviews">Reviews</a></li>
+                <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                  <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="settings.html" data-i18n="nav_settings">Settings</a></li>
+                <li><a href="order.html" class="btn btn-primary" onclick="if (typeof openOrderModal === 'function') { event.preventDefault(); openOrderModal(); }" data-i18n="order_now">Order Now</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Testimonials Hero -->
+    <section class="testimonials-hero">
+        <div class="container">
+            <h1>What Our Customers Say</h1>
+            <p>Don't just take our word for it - hear from thousands of satisfied customers across Rwanda</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h2>50,000+</h2>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat">
+                    <h2>4.9/5</h2>
+                    <p>Average Rating</p>
+                </div>
+                <div class="stat">
+                    <h2>98%</h2>
+                    <p>Would Recommend</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-grid">
+                <div class="testimonial-card featured">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Jibu Flow has been a game-changer for our family. The water tastes amazing and the delivery is always on time. We've been subscribers for over a year now and couldn't be happier!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">S</div>
+                        <div>
+                            <h4>Sarah M.</h4>
+                            <p>Kigali Resident</p>
+                            <p>Monthly Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"The delivery service is incredibly fast and reliable. I work long hours and knowing fresh water is waiting for me when I get home is such a relief. Great customer service too!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">J</div>
+                        <div>
+                            <h4>John D.</h4>
+                            <p>Business Professional</p>
+                            <p>Weekly Delivery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Best water I've ever tried! Tastes so fresh and clean. My whole family loves it, and the kids actually drink more water now. Worth every franc!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">E</div>
+                        <div>
+                            <h4>Emily R.</h4>
+                            <p>Family of 4</p>
+                            <p>Monthly Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"As a restaurant owner, water quality is crucial. Jibu Flow delivers consistently pure water that our customers love. The bulk pricing makes it cost-effective too."</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">M</div>
+                        <div>
+                            <h4>Michel K.</h4>
+                            <p>Restaurant Owner</p>
+                            <p>Bulk Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"The subscription service is perfect - never run out of water! The delivery team is professional and the water quality is outstanding. Highly recommend!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">A</div>
+                        <div>
+                            <h4>Alice N.</h4>
+                            <p>Office Manager</p>
+                            <p>Monthly Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p>"Great value for money. The 5L containers are perfect for our household needs. Fast delivery and excellent customer service. Will continue ordering!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">P</div>
+                        <div>
+                            <h4>Peter T.</h4>
+                            <p>Home Owner</p>
+                            <p>Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Stats -->
+    <section class="review-stats">
+        <div class="container">
+            <h2>Customer Satisfaction Metrics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Average Rating</div>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                    <p>Based on 2,500+ reviews</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Would Recommend</div>
+                    <div class="stat-icon">👍</div>
+                    <p>Customer loyalty score</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                    <div class="stat-icon">📞</div>
+                    <p>Always here to help</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Bottles Delivered</div>
+                    <div class="stat-icon">🚚</div>
+                    <p>Trusted by thousands</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Categories -->
+    <section class="review-categories">
+        <div class="container">
+            <h2>Reviews by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <h3>🚚 Home Delivery</h3>
+                    <div class="rating">⭐⭐⭐⭐⭐ 4.8</div>
+                    <p>"Reliable and punctual delivery service"</p>
+                    <span class="review-count">1,200 reviews</span>
+                </div>
+                <div class="category-card">
+                    <h3>🏢 Business Orders</h3>
+                    <div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
+                    <p>"Perfect for office water coolers"</p>
+                    <span class="review-count">800 reviews</span>
+                </div>
+                <div class="category-card">
+                    <h3>📞 Customer Service</h3>
+                    <div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
+                    <p>"Friendly and helpful support team"</p>
+                    <span class="review-count">950 reviews</span>
+                </div>
+                <div class="category-card">
+                    <h3>💧 Water Quality</h3>
+                    <div class="rating">⭐⭐⭐⭐⭐ 5.0</div>
+                    <p>"Exceptional taste and purity"</p>
+                    <span class="review-count">1,500 reviews</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Write a Review -->
+    <section class="write-review">
+        <div class="container">
+            <h2>📝 Share Your Experience</h2>
+            <p>💬 Your feedback helps us improve and helps other customers make informed decisions</p>
+            <div class="review-form">
+                <form id="reviewForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewerName">👤 Your Name</label>
+                            <input type="text" id="reviewerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewerEmail">📧 Email (optional)</label>
+                            <input type="email" id="reviewerEmail">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>⭐ Rating</label>
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5"><label for="star5">⭐</label>
+                            <input type="radio" id="star4" name="rating" value="4"><label for="star4">⭐</label>
+                            <input type="radio" id="star3" name="rating" value="3"><label for="star3">⭐</label>
+                            <input type="radio" id="star2" name="rating" value="2"><label for="star2">⭐</label>
+                            <input type="radio" id="star1" name="rating" value="1"><label for="star1">⭐</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">💭 Your Review</label>
+                        <textarea id="reviewText" rows="4" placeholder="Tell us about your experience with Jibu Flow..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">🚀 Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join Our Happy Customers</h2>
+            <p>Experience the Jibu Flow difference today</p>
+            <a href="pricing.html" class="btn btn-large">Start Your Order</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jibu Flow Water</h3>
+                    <p>Rwanda's trusted source for pure, refreshing water. Delivering quality and health to your doorstep.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61560424790782" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jiburwanda/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/jiburwanda" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/jibu-rwanda/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/jibu-flow">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="customer-service.html#shipping-info">Shipping Info</a></li>
+                        <li><a href="customer-service.html#returns-policy">Returns Policy</a></li>
+                        <li><a href="customer-service.html#order-tracking">Order Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="customer-service.html#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="customer-service.html#terms-of-service">Terms of Service</a></li>
+                        <li><a href="customer-service.html#cookie-policy">Cookie Policy</a></li>
+                        <li><a href="customer-service.html#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Stay hydrated with our latest updates and offers!</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ❤️ in Rwanda</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Helper Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header" id="chatHeader">
+            <div class="chat-title">
+                <span class="chat-icon">🤖</span>
+                <span data-i18n="chat_title">Jibu Flow Assistant</span>
+            </div>
+            <div class="chat-modes">
+                <button class="mode-btn active" id="aiModeBtn" title="AI Assistant">AI</button>
+                <button class="mode-btn" id="liveModeBtn" title="Live Chat with Seller">Live</button>
+            </div>
+            <button class="chat-minimize" id="chatMinimize">-</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p data-i18n="chat_greeting">Hello! 👋 I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." data-i18n-placeholder="chat_input_placeholder">
+            <button class="chat-send" id="chatSend" data-i18n="chat_send">Send</button>
+        </div>
+    </div><!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" title="Open Chat">
+        <span>💬</span>
+    </button><!-- Popup Notifications -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content order-modal-content">
+            <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+            <div class="modal-body">
+                <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="orderProduct">Product</label>
+                        <input type="text" id="orderProduct" name="product" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderName">Your Name</label>
+                        <input type="text" id="orderName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderEmail">Your Email</label>
+                        <input type="email" id="orderEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPhone">Phone Number</label>
+                        <input type="text" id="orderPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderAddress">Delivery Address</label>
+                        <input type="text" id="orderAddress" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderQuantity">Quantity</label>
+                        <input type="number" id="orderQuantity" name="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentMethod">Preferred Payment Method</label>
+                        <select id="orderPaymentMethod" name="paymentMethod" required>
+                            <option value="Credit/Debit Card">Credit/Debit Card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="MoMo Pay">MoMo Pay</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentContact">Payment Account / Number</label>
+                        <input type="text" id="orderPaymentContact" name="paymentContact" placeholder="Card holder, PayPal email, or MoMo number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNotes">Notes (optional)</label>
+                        <textarea id="orderNotes" name="notes"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitOrderBtn">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Review form submission
+    document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        try {
+            const response = await fetch('/api/reviews', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            alert(result.message);
+            if (response.ok) {
+                this.reset(); // Clear the form
+            }
+        } catch (error) {
+            alert('Failed to submit review. Please try again.');
+        }
+    });
+    </script>
+
+    <script src="auth.js"></script>
+    <script src="ai-helper.js"></script>
+    <script>
+    // Order Modal Logic
+    const orderModal = document.getElementById('orderModal');
+    const orderForm = document.getElementById('orderForm');
+    
+    function openOrderModal(product = '') {
+        if (product) {
+            document.getElementById('orderProduct').value = product;
+        }
+        orderModal.classList.add('show');
+    }
+    
+    function closeOrderModal() {
+        orderModal.classList.remove('show');
+    }
+    
+    orderForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(orderForm));
+        try {
+            const res = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                alert('thanks for work with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+                return;
+            }
+        } catch (err) {
+            console.warn('Server order API unavailable, falling back to Formspree', err);
+        }
+
+        // Fallback: send to Formspree
+        try {
+            const formspreeUrl = 'https://formspree.io/f/mdalwkqn';
+            const formData = new FormData();
+            formData.append('email', document.getElementById('orderEmail').value || '');
+            const messageParts = [];
+            messageParts.push(`Product: ${data.product || ''}`);
+            messageParts.push(`Name: ${data.name || ''}`);
+            messageParts.push(`Phone: ${data.phone || ''}`);
+            messageParts.push(`Address: ${data.address || ''}`);
+            messageParts.push(`Quantity: ${data.quantity || ''}`);
+            messageParts.push(`Payment Method: ${data.paymentMethod || ''}`);
+            messageParts.push(`Payment Account/Number: ${data.paymentContact || ''}`);
+            messageParts.push(`Notes: ${data.notes || ''}`);
+            formData.append('message', messageParts.join('\n'));
+            formData.append('_subject', `New Order: ${data.product || ''}`);
+            const resp = await fetch(formspreeUrl, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+            if (resp.ok) {
+                alert('thanks for work with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+            } else {
+                alert('Failed to place order. Please try again later.');
+            }
+        } catch (err) {
+            console.error('Formspree fallback failed', err);
+            alert('Failed to place order. Network error.');
+        }
+    });
+    </script>
+    <script src="theme.js"></script>
+    <script src="i18n.js"></script>
+</script>
+ 
+</body>
+</html>
+
+
+
+
+
+

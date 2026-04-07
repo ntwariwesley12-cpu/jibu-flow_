@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibu Flow Water</title>
+    <meta name="description" content="Jibu Flow delivers pure, refreshing bottled water across Rwanda. Same-day delivery, eco-friendly packaging, and subscription plans available. Order now!">
+    <meta name="keywords" content="bottled water, drinking water, Rwanda, Kigali, pure water, delivery, subscription, eco-friendly">
+    <meta name="author" content="KABOOKYA Milly - Jibu Flow Water">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jibuflow.rw/">
+    <meta property="og:title" content="Jibu Flow Water - Premium Drinking Water">
+    <meta property="og:description" content="Rwanda's trusted source for pure, refreshing bottled water with same-day delivery.">
+    <meta property="og:image" content="https://jibuflow.rw/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jibuflow.rw/">
+    <meta property="twitter:title" content="Jibu Flow Water - Premium Drinking Water">
+    <meta property="twitter:description" content="Rwanda's trusted source for pure, refreshing bottled water with same-day delivery.">
+    <meta property="twitter:image" content="https://jibuflow.rw/images/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="stylesheet" href="professional.css">
+    <link rel="stylesheet" href="product-style.css">
+    <link rel="stylesheet" href="ai-helper.css">
+</head>
+<body class="light">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/jibu-flow" class="logo-link">
+                    <img src="assets/logo.svg" alt="Jibu Flow" class="site-logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active" data-i18n="nav_home">Home</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                <li><a href="testimonials.html" data-i18n="nav_reviews">Reviews</a></li>
+                <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="settings.html" data-i18n="nav_settings">Settings</a></li>
+                <li><a href="order.html" class="btn btn-primary" onclick="if (typeof openOrderModal === 'function') { event.preventDefault(); openOrderModal(); }" data-i18n="order_now">Order Now</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-i18n="hero_h1">Pure Water for Pure Life</h1>
+                <p data-i18n="hero_p">Experience the freshest, cleanest drinking water delivered to your doorstep</p>
+                <button class="btn btn-primary" onclick="window.location.href='products.html'" data-i18n="hero_order_btn">Order Now</button>
+                <a class="btn btn-secondary" href="https://wa.me/250787390669?text=Hello%20Jibu%20Flow%2C%20I%20want%20to%20order%20water." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+            </div>
+            <div class="hero-image">
+                <div class="water-bottle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-i18n="features_title">Why Choose Jibu Flow?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 data-i18n="features_pure_title">100% Pure</h3>
+                    <p data-i18n="features_pure_p">Multi-stage filtration system removes impurities while retaining essential minerals</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 data-i18n="features_fast_title">Fast Delivery</h3>
+                    <p data-i18n="features_fast_p">Same-day delivery available in selected areas. Fresh water at your door</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 data-i18n="features_eco_title">Eco-Friendly</h3>
+                    <p data-i18n="features_eco_p">100% recyclable bottles. We're committed to reducing plastic waste</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 data-i18n="features_health_title">Health Tested</h3>
+                    <p data-i18n="features_health_p">Lab certified and tested daily to ensure highest quality standards</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3 data-i18n="features_affordable_title">Affordable</h3>
+                    <p data-i18n="features_affordable_p">Competitive pricing with subscription discounts up to 20%</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3 data-i18n="features_support_title">Customer Support</h3>
+                    <p data-i18n="features_support_p">24/7 customer service ready to help with any questions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 data-i18n="testimonials_title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p data-i18n="testimonials_1_quote">"Best water I've ever tried! Tastes so fresh and clean."</p>
+                    <p class="author" data-i18n="testimonials_1_author">- Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p data-i18n="testimonials_2_quote">"The delivery service is incredibly fast and reliable. Highly recommend!"</p>
+                    <p class="author" data-i18n="testimonials_2_author">- John D.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p data-i18n="testimonials_3_quote">"Great value for money. My whole family loves it!"</p>
+                    <p class="author" data-i18n="testimonials_3_author">- Emily R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 data-i18n="cta_title">Ready to Stay Hydrated?</h2>
+            <p data-i18n="cta_p">Join thousands of satisfied customers enjoying pure, fresh water</p>
+            <button class="btn btn-large" data-i18n="cta_button">Start Your Order Today</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jibu Flow</h3>
+                    <p data-i18n="footer_about">Rwanda's trusted source for pure, refreshing water. Delivering quality and health to your doorstep.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61560424790782" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jiburwanda/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/jiburwanda" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/jibu-rwanda/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer_quick_links">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html" data-i18n="footer_about_us">About Us</a></li>
+                        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                        <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                        <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                        <li><a href="testimonials.html" data-i18n="nav_reviews">Reviews</a></li>
+                       <li><a href="settings.html" data-i18n="nav_settings">Settings</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer_customer_service">Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html" data-i18n="footer_contact_us">Contact Us</a></li>
+                        <li><a href="customer-service.html#shipping-info" data-i18n="footer_shipping_info">Shipping Info</a></li>
+                        <li><a href="customer-service.html#returns-policy" data-i18n="footer_returns_policy">Returns Policy</a></li>
+                        <li><a href="customer-service.html#order-tracking" data-i18n="footer_order_tracking">Order Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer_legal">Legal</h3>
+                    <ul>
+                        <li><a href="customer-service.html#privacy-policy" data-i18n="footer_privacy">Privacy Policy</a></li>
+                        <li><a href="customer-service.html#terms-of-service" data-i18n="footer_terms">Terms of Service</a></li>
+                        <li><a href="customer-service.html#cookie-policy" data-i18n="footer_cookie">Cookie Policy</a></li>
+                        <li><a href="customer-service.html#accessibility" data-i18n="footer_accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer_newsletter">Newsletter</h3>
+                    <p data-i18n="footer_newsletter_p">Stay hydrated with our latest updates and offers!</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email" data-i18n-placeholder="newsletter_placeholder" class="newsletter-input">
+                        <button class="newsletter-btn" data-i18n="subscribe">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ❤️ in Rwanda</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Helper Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header" id="chatHeader">
+            <div class="chat-title">
+                <span class="chat-icon">🤖</span>
+                <span data-i18n="chat_title">Jibu Flow Assistant</span>
+            </div>
+            <div class="chat-modes">
+                <button class="mode-btn active" id="aiModeBtn" title="AI Assistant">AI</button>
+                <button class="mode-btn" id="liveModeBtn" title="Live Chat with Seller">Live</button>
+            </div>
+            <button class="chat-minimize" id="chatMinimize">-</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p data-i18n="chat_greeting">Hello! 👋 I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." data-i18n-placeholder="chat_input_placeholder">
+            <button class="chat-send" id="chatSend" data-i18n="chat_send">Send</button>
+        </div>
+    </div><!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" title="Open Chat">
+        <span>💬</span>
+    </button><!-- Popup Notifications -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Welcome Popup -->
+    <div class="modal" id="welcomeModal">
+        <div class="modal-content welcome-popup">
+            <button class="modal-close" id="closeWelcome">&times;</button>
+            <div class="modal-body">
+                <h2>Welcome to Jibu Flow! 🌊</h2>
+                <p>Get <strong>20% OFF</strong> your first order!</p>
+                <p>Use code: <span class="code">PUREWATER20</span></p>
+                <button class="btn btn-primary" id="applyDiscount">Claim Your Discount</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-popup">
+            <button class="modal-close" id="closeSuccess">&times;</button>
+            <div class="modal-body">
+                <h2>✅ Order Placed Successfully!</h2>
+                <p id="successMessage">Your order has been confirmed.</p>
+                <button class="btn btn-primary" id="closeSuccessBtn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content payment-popup">
+            <button class="modal-close" id="closePayment">&times;</button>
+            <div class="modal-body">
+                <h2>Complete Your Payment</h2>
+                <p class="payment-subtitle">Choose your preferred payment method and complete checkout securely.</p>
+                <form id="paymentForm">
+                    <div class="payment-layout">
+                    <div class="payment-main">
+                    <div class="form-group">
+                        <label for="customerName">Full Name</label>
+                        <input type="text" id="customerName" placeholder="Enter your full name here" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email Address</label>
+                        <input type="email" id="customerEmail" placeholder="Enter your email address" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone</label>
+                        <input type="tel" id="customerPhone" placeholder="e.g. 078XXXXXXX" autocomplete="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product">Product</label>
+                        <select id="product" required>
+                            <option value="500ml Bottle">500ml Bottle - RWF 2,500</option>
+                            <option value="1L Bottle">1L Bottle - RWF 3,900</option>
+                            <option value="5L Container">5L Container - RWF 10,400</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="stripe" checked>
+                                <span>?? Visa/Credit Card</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="paypal">
+                                <span>??? PayPal</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="momo">
+                                <span>?? Momo Pay</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="cardDetailsPanel" class="payment-method-panel">
+                        <h3 class="payment-panel-title">Card Details</h3>
+                        <div class="payment-grid">
+                            <div class="form-group">
+                                <label for="cardHolderName">Name on Card</label>
+                                <input type="text" id="cardHolderName" autocomplete="cc-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardBillingZip">Billing ZIP / Postal Code</label>
+                                <input type="text" id="cardBillingZip" autocomplete="postal-code" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardElement">Card Number, Expiry & CVC</label>
+                            <div id="cardElement" class="stripe-card-element">
+                                <!-- Stripe Card Element will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="paypalDetailsPanel" class="payment-method-panel" style="display: none;">
+                        <h3 class="payment-panel-title">PayPal Account Details</h3>
+                        <div class="payment-grid">
+                            <div class="form-group">
+                                <label for="paypalEmail">PayPal Email</label>
+                                <input type="email" id="paypalEmail" autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="paypalAccountName">Account Holder Name</label>
+                                <input type="text" id="paypalAccountName" autocomplete="name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="momoDetailsPanel" class="payment-method-panel" style="display: none;">
+                        <h3 class="payment-panel-title">Mobile Money Details</h3>
+                        <div class="payment-grid">
+                            <div class="form-group">
+                                <label for="momoProvider">Network</label>
+                                <select id="momoProvider">
+                                    <option value="">Select network</option>
+                                    <option value="MTN MoMo">MTN MoMo</option>
+                                    <option value="Airtel Money">Airtel Money</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="momoNumber">MoMo Number</label>
+                                <input type="tel" id="momoNumber" placeholder="07XXXXXXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="momoNames">Registered Names</label>
+                            <input type="text" id="momoNames" placeholder="Names on the MoMo account">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="payButton">Pay Now</button>
+                    </div>
+                    <aside class="payment-summary" aria-live="polite">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Product</span>
+                            <strong id="summaryProduct">500ml Bottle</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Quantity</span>
+                            <strong id="summaryQuantity">1</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Unit Price</span>
+                            <strong id="summaryUnitPrice">RWF 2,500</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Payment</span>
+                            <strong id="summaryMethod">Card</strong>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <strong id="summaryTotal">RWF 2,500</strong>
+                        </div>
+                        <p class="summary-note">Secure checkout. Your order details are shared only for payment and delivery processing.</p>
+                    </aside>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Shipping Info Modal -->
+    <div class="modal" id="shippingModal">
+        <div class="modal-content shipping-modal">
+            <button class="modal-close" id="closeShipping">&times;</button>
+            <div class="modal-body">
+                <h2>🚚 Shipping Information</h2>
+                <div class="shipping-info">
+                    <div class="shipping-zone">
+                        <h3>Kigali Metro Area</h3>
+                        <p>✅ Same-day delivery</p>
+                        <p>✅ Free delivery on orders over RWF 50,000</p>
+                        <p>⏰ Delivery hours: 8 AM - 6 PM</p>
+                    </div>
+                    <div class="shipping-zone">
+                        <h3>Provincial Areas</h3>
+                        <p>🚚 1-2 business days delivery</p>
+                        <p>💰 Delivery fee: RWF 5,000 - 15,000</p>
+                        <p>📞 Call for exact rates</p>
+                    </div>
+                    <div class="shipping-zone">
+                        <h3>International</h3>
+                        <p>✈️ Available upon request</p>
+                        <p>📧 Contact us for quotes</p>
+                        <p>🌍 East African region</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Returns Policy Modal -->
+    <div class="modal" id="returnsModal">
+        <div class="modal-content returns-modal">
+            <button class="modal-close" id="closeReturns">&times;</button>
+            <div class="modal-body">
+                <h2>↩️ Returns & Refunds Policy</h2>
+                <div class="policy-content">
+                    <h3>Empty Bottle Returns</h3>
+                    <p>We encourage returning empty bottles for recycling. Receive RWF 100 credit per returned bottle.</p>
+
+                    <h3>Damaged Products</h3>
+                    <p>If you receive damaged or contaminated products, contact us within 24 hours for a full refund or replacement.</p>
+
+                    <h3>Subscription Cancellation</h3>
+                    <p>Cancel your subscription anytime. Refunds processed within 5-7 business days.</p>
+
+                    <h3>Contact Us</h3>
+                    <p>For returns or refunds: Call 0787390669 or 0788496959, or email ntwariwesley@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content order-modal-content">
+            <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+            <div class="modal-body">
+                <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="orderProduct">Product</label>
+                        <input type="text" id="orderProduct" name="product" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderName">Your Name</label>
+                        <input type="text" id="orderName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderEmail">Your Email</label>
+                        <input type="email" id="orderEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPhone">Phone Number</label>
+                        <input type="text" id="orderPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderAddress">Delivery Address</label>
+                        <input type="text" id="orderAddress" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderQuantity">Quantity</label>
+                        <input type="number" id="orderQuantity" name="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentMethod">Preferred Payment Method</label>
+                        <select id="orderPaymentMethod" name="paymentMethod" required>
+                            <option value="Credit/Debit Card">Credit/Debit Card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="MoMo Pay">MoMo Pay</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentContact">Payment Account / Number</label>
+                        <input type="text" id="orderPaymentContact" name="paymentContact" placeholder="Card holder, PayPal email, or MoMo number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNotes">Notes (optional)</label>
+                        <textarea id="orderNotes" name="notes"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitOrderBtn">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        ?
+    </button>
+
+    <script src="auth.js"></script>
+    <script src="ai-helper.js"></script>
+    <script>
+    // Order Modal Logic
+    const orderModal = document.getElementById('orderModal');
+    const orderForm = document.getElementById('orderForm');
+    
+    function openOrderModal(product = '') {
+        if (product) {
+            document.getElementById('orderProduct').value = product;
+        }
+        orderModal.classList.add('show');
+    }
+    
+    function closeOrderModal() {
+        orderModal.classList.remove('show');
+    }
+    
+    orderForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(orderForm));
+        // Try server endpoint first
+        try {
+            const res = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                alert('thanks for work with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+                return;
+            }
+        } catch (err) {
+            console.warn('Server order API unavailable, falling back to Formspree', err);
+        }
+
+        // Fallback: send to Formspree
+        try {
+            const formspreeUrl = 'https://formspree.io/f/mdalwkqn';
+            const formData = new FormData();
+            formData.append('email', document.getElementById('orderEmail').value || '');
+            const messageParts = [];
+            messageParts.push(`Product: ${data.product || ''}`);
+            messageParts.push(`Name: ${data.name || ''}`);
+            messageParts.push(`Phone: ${data.phone || ''}`);
+            messageParts.push(`Address: ${data.address || ''}`);
+            messageParts.push(`Quantity: ${data.quantity || ''}`);
+            messageParts.push(`Payment Method: ${data.paymentMethod || ''}`);
+            messageParts.push(`Payment Account/Number: ${data.paymentContact || ''}`);
+            messageParts.push(`Notes: ${data.notes || ''}`);
+            formData.append('message', messageParts.join('\n'));
+            formData.append('_subject', `New Order: ${data.product || ''}`);
+            const resp = await fetch(formspreeUrl, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+            if (resp.ok) {
+                alert('thanks for working with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+            } else {
+                alert('Failed to place order. Please try again later.');
+            }
+        } catch (err) {
+            console.error('Formspree fallback failed', err);
+            const waMessage = [
+                'Hello Jibu Flow, I want to place an order.',
+                `Product: ${data.product || ''}`,
+                `Name: ${data.name || ''}`,
+                `Phone: ${data.phone || ''}`,
+                `Address: ${data.address || ''}`,
+                `Quantity: ${data.quantity || ''}`,
+                `Notes: ${data.notes || ''}`
+            ].join('\n');
+            window.open(`https://wa.me/250787390669?text=${encodeURIComponent(waMessage)}`, '_blank');
+            alert('Network issue. WhatsApp has been opened to complete your order.');
+        }
+    });
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="theme.js"></script>
+    <script src="i18n.js"></script>
+</script>
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

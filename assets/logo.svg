@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64" role="img" aria-label="Jibu Flow logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00b4db"/>
+      <stop offset="100%" stop-color="#0083b0"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="240" height="64" rx="8" fill="transparent"/>
+    <!-- droplet -->
+    <g transform="translate(12,8)">
+      <path d="M20 2c6.6 0 12 5.4 12 12 0 9.3-12 20-12 20S8 23.3 8 14C8 7.4 13.4 2 20 2z" fill="url(#g)"/>
+      <circle cx="20" cy="14" r="3" fill="#fff" opacity="0.12"/>
+    </g>
+    <!-- text -->
+    <g transform="translate(56,18)" fill="#0b3550">
+      <text x="0" y="16" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700">Jibu Flow</text>
+      <text x="0" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#3b6b84">Pure Water • Fast Delivery</text>
+    </g>
+  </g>
+</svg>

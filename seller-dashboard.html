@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibu Flow Water</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; display: flex; height: 100vh; }
+        #sidebar { width: 300px; background: #f0f2f5; border-right: 1px solid #ddd; display: flex; flex-direction: column; }
+        #chat-area { flex: 1; display: flex; flex-direction: column; background: #fff; }
+        .header { padding: 20px; background: #007bff; color: white; font-weight: bold; }
+        #waiting-list { flex: 1; overflow-y: auto; padding: 10px; }
+        .chat-item { padding: 15px; background: white; margin-bottom: 10px; border-radius: 5px; cursor: pointer; border: 1px solid #ddd; }
+        .chat-item:hover { background: #e9ecef; }
+        .chat-item strong { display: block; margin-bottom: 5px; }
+        #messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        .message { max-width: 70%; padding: 10px 15px; border-radius: 15px; line-height: 1.4; }
+        .customer-message { align-self: flex-start; background: #f0f2f5; color: black; }
+        .seller-message { align-self: flex-end; background: #007bff; color: white; }
+        #input-area { padding: 20px; border-top: 1px solid #ddd; display: flex; gap: 10px; }
+        input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:disabled { background: #ccc; }
+        .hidden { display: none !important; }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="header">Waiting Chats</div>
+    <div id="waiting-list"></div>
+</div>
+
+<div id="chat-area">
+    <div class="header" id="chat-header">Select a chat to start</div>
+    <div id="messages"></div>
+    <div id="input-area" class="hidden">
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button id="sendBtn">Send</button>
+        <button id="endBtn" style="background: #dc3545;">End Chat</button>
+    </div>
+</div>
+
+<script>
+    const socket = io();
+    let currentChatId = null;
+
+    // Seller Login
+    const sellerName = prompt("Enter Seller Name:", "Support Agent") || "Agent";
+    socket.emit('seller_online', { name: sellerName });
+
+    // Socket Events
+    socket.on('waiting_chats', (chats) => {
+        renderWaitingList(chats);
+    });
+
+    socket.on('new_chat_request', (data) => {
+        // Ideally append, but for simplicity we can just wait for the updated list or add it manually
+        // The server sends the full list on connection, but for new requests we might want to refresh
+        console.log("New chat request", data);
+        // In a real app, we'd append to the list. For now, let's just reload the page or handle it dynamically
+        const list = document.getElementById('waiting-list');
+        const div = createChatItem(data);
+        list.appendChild(div);
+    });
+
+    socket.on('chat_accepted', (data) => {
+        currentChatId = data.chatId;
+        document.getElementById('input-area').classList.remove('hidden');
+        document.getElementById('messages').innerHTML = '';
+        document.getElementById('chat-header').textContent = `Chatting with Customer`;
+        
+        // Load history
+        data.messages.forEach(msg => addMessage(msg));
+    });
+
+    socket.on('new_message', (msg) => {
+        if (currentChatId && (msg.chatId === currentChatId || !msg.chatId)) { // Server might not send chatId in msg object depending on implementation
+             addMessage(msg);
+        }
+    });
+
+    socket.on('chat_ended', () => {
+        alert('Chat ended');
+        resetChat();
+    });
+
+    socket.on('seller_left', () => {
+        // Another seller took it or connection lost
+    });
+
+    // UI Functions
+    function renderWaitingList(chats) {
+        const list = document.getElementById('waiting-list');
+        list.innerHTML = '';
+        chats.forEach(chat => {
+            list.appendChild(createChatItem(chat));
+        });
+    }
+
+    function createChatItem(chat) {
+        const div = document.createElement('div');
+        div.className = 'chat-item';
+        div.innerHTML = `
+            <strong>${chat.customerInfo.name}</strong>
+            <small>${chat.customerInfo.email}</small>
+        `;
+        div.onclick = () => acceptChat(chat.chatId);
+        return div;
+    }
+
+    function acceptChat(chatId) {
+        socket.emit('accept_chat', chatId);
+    }
+
+    function addMessage(msg) {
+        const div = document.createElement('div');
+        div.className = `message ${msg.senderType === 'seller' ? 'seller-message' : 'customer-message'}`;
+        div.textContent = msg.text;
+        document.getElementById('messages').appendChild(div);
+        document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('messageInput');
+        const text = input.value.trim();
+        if (!text || !currentChatId) return;
+
+        socket.emit('send_message', {
+            chatId: currentChatId,
+            message: text,
+            senderType: 'seller'
+        });
+        input.value = '';
+    }
+
+    function resetChat() {
+        currentChatId = null;
+        document.getElementById('input-area').classList.add('hidden');
+        document.getElementById('messages').innerHTML = '';
+        document.getElementById('chat-header').textContent = 'Select a chat to start';
+    }
+
+    // Event Listeners
+    document.getElementById('sendBtn').addEventListener('click', sendMessage);
+    document.getElementById('messageInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
+    document.getElementById('endBtn').addEventListener('click', () => {
+        if (currentChatId) socket.emit('end_chat', currentChatId);
+        resetChat();
+    });
+</script>
+<script src="theme.js"></script>
+ 
+</body>
+</html>
+
+
+
+
+

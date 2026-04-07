@@ -1,0 +1,38 @@
+<!-- AI Chat Helper Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header" id="chatHeader">
+            <div class="chat-title">
+                <span class="chat-icon">🤖</span>
+                <span data-i18n="chat_title">Jibu Flow Assistant</span>
+            </div>
+            <div class="chat-modes">
+                <button class="mode-btn active" id="aiModeBtn" title="AI Assistant">AI</button>
+                <button class="mode-btn" id="liveModeBtn" title="Live Chat with Seller">Live</button>
+            </div>
+            <button class="chat-minimize" id="chatMinimize">-</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p data-i18n="chat_greeting">Hello! 👋 I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." data-i18n-placeholder="chat_input_placeholder">
+            <button class="chat-send" id="chatSend" data-i18n="chat_send">Send</button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+
+<!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" title="Open Chat">
+        <span>💬</span>
+    </button>
+
+    <!-- Popup Notifications -->
+
+<!-- Popup Notifications -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Welcome Popup -->
+

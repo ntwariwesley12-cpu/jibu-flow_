@@ -1,0 +1,1011 @@
+/* Chat Widget Styles */
+.chat-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 360px;
+    height: 480px;
+    background: var(--glass-bg, #fff);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(0, 102, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    animation: slideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 102, 255, 0.1);
+}
+
+.chat-widget.minimized {
+    height: 480px !important;
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+    }
+}
+
+.chat-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chat-modes {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mode-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.mode-btn.active {
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.chat-icon {
+    font-size: 1.5rem;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+}
+
+.chat-minimize {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-minimize:hover {
+    opacity: 0.8;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    animation: messageAppear 0.3s ease;
+    display: flex;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.bot-message p {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px 10px 10px 5px;
+    margin: 0;
+    max-width: 85%;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message p {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px 10px 5px 10px;
+    margin: 0;
+    max-width: 85%;
+    font-size: 0.95rem;
+}
+
+.seller-message {
+    justify-content: flex-start;
+}
+
+.seller-message p {
+    background: #FF5722;
+    color: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px 10px 10px 5px;
+    margin: 0;
+    max-width: 85%;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.system-message {
+    justify-content: center;
+}
+
+.system-message p {
+    background: #9E9E9E;
+    color: var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    margin: 0;
+    max-width: 90%;
+    font-size: 0.85rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    background: var(--white);
+}
+
+.chat-input {
+    flex: 1;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.chat-send {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.chat-send:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Chat Toggle Button */
+.chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 168, 232, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 998;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 5px 20px rgba(0, 168, 232, 0.4);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 5px 30px rgba(0, 168, 232, 0.6);
+    }
+}
+
+.chat-toggle:hover {
+    transform: scale(1.15);
+}
+
+.chat-toggle.hidden {
+    display: none;
+}
+
+/* Notification Styles */
+.notification-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 400px;
+}
+
+.notification {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    animation: slideInRight 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.notification.success {
+    border-left-color: #4caf50;
+}
+
+.notification.error {
+    border-left-color: #f44336;
+}
+
+.notification.warning {
+    border-left-color: #ff9800;
+}
+
+.notification.info {
+    border-left-color: var(--primary-color);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+.notification.fade-out {
+    animation: slideOutRight 0.3s ease forwards;
+}
+
+.notification-title {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.notification-message {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.notification-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--light-text);
+    transition: color 0.3s ease;
+}
+
+.notification-close:hover {
+    color: var(--dark-text);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    max-width: 260px;
+    width: 72%;
+    animation: zoomIn 0.3s ease;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--light-text);
+    transition: color 0.3s ease;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: var(--dark-text);
+}
+
+.modal-body {
+    padding: 0.25rem 0.25rem 0.25rem;
+    text-align: center;
+}
+
+.welcome-popup h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.welcome-popup p {
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.code {
+    background: var(--light-bg);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.success-popup h2 {
+    color: #4caf50;
+}
+
+.success-popup p {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 0.8rem 1.2rem;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        opacity: 0.3;
+    }
+    30% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design for Chat */
+@media (max-width: 768px) {
+    .chat-widget {
+        width: 90%;
+        height: 500px;
+        bottom: 80px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .notification-container {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+
+    .notification {
+        margin-bottom: 0.8rem;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-widget {
+        width: 100%;
+        height: 450px;
+        bottom: 70px;
+        right: 0;
+        left: 0;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .chat-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .chat-messages {
+        padding: 1rem;
+    }
+}
+
+/* Payment Modal Styles */
+.payment-popup .modal-body {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.payment-popup h2 {
+    color: var(--secondary-color);
+    margin-bottom: 0.4rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 0.25rem;
+}
+
+input, textarea, select {
+    padding: 4px 6px;
+    font-size: 12px;
+}
+
+.payment-popup .modal-body {
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+/* Make labels slightly smaller to fit more fields */
+.label, label {
+    font-size: 10px;
+}
+
+/* Slightly smaller modal corners */
+.modal-content {
+    border-radius: 8px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.1rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    font-size: 0.75rem;
+}
+
+.form-group label[for="customerName"] {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.25rem 0.3rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    transition: border-color 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#customerName {
+    border: 2px solid var(--primary-color);
+    background-color: rgba(0, 168, 232, 0.05);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem;
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.1);
+    transition: all 0.3s ease;
+}
+
+#customerName:focus {
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.3);
+    transform: scale(1.02);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 32px;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.payment-option:hover {
+    border-color: var(--primary-color);
+    background-color: var(--light-bg);
+}
+
+.payment-option input[type="radio"] {
+    margin: 0;
+}
+
+.payment-option span {
+    font-weight: 500;
+}
+
+#payButton {
+    width: 100%;
+    padding: 0.25rem 0.3rem;
+    font-size: 0.8rem;
+    margin-top: 0.35rem;
+}
+
+/* Professional payment form override */
+.payment-popup {
+    width: min(96vw, 1080px);
+    max-width: 1080px;
+}
+
+.payment-popup .modal-body {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.45rem 1.35rem;
+}
+
+.payment-popup h2 {
+    font-size: 1.55rem;
+    margin-bottom: 0.25rem;
+    text-align: left;
+    color: var(--secondary-color);
+}
+
+.payment-subtitle {
+    margin: 0 0 1rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.payment-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.payment-main {
+    border: 1px solid #dbe6f1;
+    border-radius: 14px;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(2, 35, 62, 0.08);
+}
+
+.payment-popup .form-group {
+    margin-bottom: 0.95rem;
+}
+
+.payment-popup .form-group label {
+    font-size: 0.83rem;
+    font-weight: 700;
+    margin-bottom: 0.34rem;
+    color: var(--secondary-color);
+    letter-spacing: 0.2px;
+}
+
+.payment-popup .form-group input,
+.payment-popup .form-group select,
+.payment-popup .form-group textarea {
+    padding: 0.75rem 0.85rem;
+    border-radius: 11px;
+    border: 1px solid #d6dde7;
+    font-size: 0.94rem;
+    background: #fff;
+}
+
+.payment-popup .form-group input:focus,
+.payment-popup .form-group select:focus,
+.payment-popup .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.15);
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.72rem;
+}
+
+.payment-option {
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #d6dde7;
+    border-radius: 12px;
+    padding: 0.78rem 0.92rem;
+    min-width: 0;
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.payment-option.active {
+    border-color: var(--primary-color);
+    background: rgba(0, 168, 232, 0.08);
+    box-shadow: 0 6px 16px rgba(0, 168, 232, 0.14);
+}
+
+.payment-option span {
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+
+.payment-method-panel {
+    border: 1px solid #dbe6f1;
+    border-radius: 12px;
+    padding: 0.92rem;
+    background: linear-gradient(180deg, #f9fcff 0%, #ffffff 100%);
+    margin-bottom: 1rem;
+}
+
+.payment-panel-title {
+    margin-bottom: 0.72rem;
+    font-size: 0.96rem;
+    color: #0a3d62;
+}
+
+.stripe-card-element {
+    border: 1px solid #d6dde7;
+    border-radius: 10px;
+    padding: 0.72rem 0.78rem;
+    min-height: 46px;
+    background: #fff;
+}
+
+.payment-summary {
+    border: 1px solid #dbe6f1;
+    border-radius: 14px;
+    padding: 1rem;
+    background: linear-gradient(180deg, #f6fbff 0%, #ffffff 100%);
+    box-shadow: 0 10px 24px rgba(2, 35, 62, 0.08);
+}
+
+.payment-summary h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #0a3d62;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.56rem;
+    color: #334155;
+}
+
+.summary-row strong {
+    color: #111827;
+    font-size: 0.92rem;
+}
+
+.summary-divider {
+    height: 1px;
+    background: #dbe6f1;
+    margin: 0.65rem 0 0.75rem;
+}
+
+.summary-row.total {
+    font-size: 1rem;
+}
+
+.summary-row.total strong {
+    color: #0a3d62;
+    font-size: 1.08rem;
+}
+
+.summary-note {
+    margin-top: 0.7rem;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: #64748b;
+}
+
+#payButton {
+    width: 100%;
+    padding: 0.86rem 1rem;
+    border-radius: 11px;
+    font-size: 0.97rem;
+    margin-top: 0.2rem;
+}
+
+@media (max-width: 992px) {
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-popup .modal-body {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .payment-grid,
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Larger and more polished Order form modal */
+.order-modal-content {
+    width: min(96vw, 780px);
+    max-width: 780px;
+}
+
+.order-modal-content .modal-body {
+    padding: 1.35rem 1.45rem;
+}
+
+.order-modal-content .modal-body h2 {
+    font-size: 1.45rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.order-modal-content .form-group {
+    margin-bottom: 0.95rem;
+}
+
+.order-modal-content .form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.34rem;
+}
+
+.order-modal-content .form-group input,
+.order-modal-content .form-group select,
+.order-modal-content .form-group textarea {
+    width: 100%;
+    border: 1px solid #d6dde7;
+    border-radius: 10px;
+    padding: 0.72rem 0.82rem;
+    font-size: 0.95rem;
+    background: #fff;
+}
+
+.order-modal-content .form-group input:focus,
+.order-modal-content .form-group select:focus,
+.order-modal-content .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.14);
+}
+
+.order-modal-content #submitOrderBtn {
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    font-size: 0.96rem;
+}
+
+@media (max-width: 768px) {
+    .order-modal-content {
+        width: min(96vw, 96vw);
+    }
+
+    .order-modal-content .modal-body {
+        padding: 1rem;
+    }
+}
+
+/* Shipping and Returns Modals */
+.shipping-modal .modal-body,
+.returns-modal .modal-body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.shipping-modal h2,
+.returns-modal h2 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.shipping-info,
+.policy-content {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.shipping-zone,
+.policy-content h3 {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.shipping-zone h3,
+.policy-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.shipping-zone p,
+.policy-content p {
+    margin: 0.5rem 0;
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.policy-content h3 {
+    margin-top: 1.5rem;
+}
+
+.policy-content h3:first-child {
+    margin-top: 0;
+}

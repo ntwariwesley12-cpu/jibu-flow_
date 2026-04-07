@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seller Dashboard</title>
+  <style>
+    body { font-family: Arial; display: flex; }
+    #chats { width: 30%; border-right: 1px solid #ccc; padding: 10px; }
+    #messages { width: 70%; padding: 10px; }
+  </style>
+</head>
+<body>
+
+<div id="chats">
+  <h3>Waiting Chats</h3>
+  <ul id="chatList"></ul>
+</div>
+
+<div id="messages">
+  <h3>Messages</h3>
+  <div id="chat"></div>
+  <input id="msg" />
+  <button onclick="send()">Send</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+  const socket = io("http://localhost:3001");
+
+  let activeChatId = null;
+  const chatDiv = document.getElementById('chat');
+  const chatList = document.getElementById('chatList');
+
+  socket.emit('seller_online', { name: 'Seller 1' });
+
+  socket.on('waiting_chats', (chats) => {
+    chatList.innerHTML = '';
+    chats.forEach(c => {
+      const li = document.createElement('li');
+      li.textContent = c.customerInfo.name;
+      li.onclick = () => accept(c.chatId);
+      chatList.appendChild(li);
+    });
+  });
+
+  socket.on('new_chat_request', (c) => {
+    const li = document.createElement('li');
+    li.textContent = c.customerInfo.name;
+    li.onclick = () => accept(c.chatId);
+    chatList.appendChild(li);
+  });
+
+  socket.on('chat_accepted', (data) => {
+    activeChatId = data.chatId;
+    chatDiv.innerHTML = '';
+    data.messages.forEach(m => log(m.senderType + ': ' + m.text));
+  });
+
+  socket.on('new_message', (m) => {
+    log(m.senderType + ': ' + m.text);
+  });
+
+  function accept(chatId) {
+    socket.emit('accept_chat', chatId);
+  }
+
+  function send() {
+    const text = msg.value;
+    if (!text || !activeChatId) return;
+
+    socket.emit('send_message', {
+      chatId: activeChatId,
+      message: text,
+      senderType: 'seller'
+    });
+
+    msg.value = '';
+  }
+
+  function log(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    chatDiv.appendChild(div);
+  }
+</script>
+
+</body>
+</html>

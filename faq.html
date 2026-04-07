@@ -1,0 +1,479 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibu Flow Water</title>
+    <meta name="description" content="Find answers to common questions about Jibu Flow water delivery, pricing, subscriptions, and services in Rwanda. Customer support FAQ.">
+    <meta name="keywords" content="Jibu Flow FAQ, water delivery questions, bottled water Rwanda FAQ, subscription questions">
+
+    <link rel="stylesheet" href="professional.css">
+    <link rel="stylesheet" href="product-style.css">
+    <link rel="stylesheet" href="ai-helper.css">
+    <style>
+        .order-modal-content .form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .order-modal-content .form-group input,
+        .order-modal-content .form-group textarea,
+        .order-modal-content .form-group select {
+            font-size: 1rem;
+            padding: 0.75rem;
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+        .topic-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .topic-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .topic-link.primary {
+            background: #0a3d62;
+            color: #fff;
+            border: 1px solid #0a3d62;
+        }
+
+        .topic-link.secondary {
+            background: #fff;
+            color: #0a3d62;
+            border: 1px solid #0a3d62;
+        }
+
+        .topic-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(10, 61, 98, 0.18);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/jibu-flow">Jibu Flow</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/jibu-flow" data-i18n="nav_home">Home</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                <li><a href="testimonials.html" data-i18n="nav_reviews">Reviews</a></li>
+                <li><a href="faq.html" class="active" data-i18n="nav_faq">FAQ</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="settings.html" data-i18n="nav_settings">Settings</a></li>
+                <li><a href="order.html" class="btn btn-primary" onclick="if (typeof openOrderModal === 'function') { event.preventDefault(); openOrderModal(); }" data-i18n="order_now">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find quick answers to common questions about our products, services, and delivery</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Is Jibu Flow water safe to drink?</h3>
+                    <p>Yes! Our water undergoes rigorous testing and multiple purification processes to ensure it's 100% safe and pure. Every bottle is lab-certified and meets Rwanda's highest water quality standards.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does delivery take?</h3>
+                    <p>Same-day delivery in Kigali and surrounding areas for orders placed before 2 PM. Rural delivery may take 1-2 business days depending on location.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer subscriptions?</h3>
+                    <p>Yes! We offer flexible monthly and yearly subscription plans with up to 20% discount and free delivery. You can cancel or modify your subscription anytime.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>We accept Visa, MasterCard, PayPal, bank transfers, and Momo Pay for secure and convenient payments. All transactions are encrypted and secure.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I return empty bottles?</h3>
+                    <p>Yes, we encourage bottle returns for recycling. Get RWF 100 credit per returned bottle. This helps us reduce plastic waste and keep costs affordable.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is your packaging eco-friendly?</h3>
+                    <p>Absolutely! All our bottles are 100% recyclable and made from BPA-free plastic. We're committed to reducing our environmental impact.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if my water arrives damaged?</h3>
+                    <p>If you receive damaged or leaking bottles, contact us immediately. We'll arrange a replacement delivery at no extra cost within 24 hours.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I change my delivery address?</h3>
+                    <p>Yes, you can update your delivery address anytime through our website, mobile app, or by calling customer service. Changes take effect on the next delivery.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you deliver on weekends?</h3>
+                    <p>We offer weekend delivery in Kigali metro area. Please specify your preferred delivery time when placing your order. Additional fees may apply for weekend delivery.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I track my order?</h3>
+                    <p>Once your order is confirmed, you'll receive SMS and email updates with tracking information. You can also call our customer service for real-time updates.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is your minimum order quantity?</h3>
+                    <p>Our minimum order is 1 bottle for one-time purchases. For subscriptions, the minimum is 4 bottles per month to qualify for subscription discounts.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are there any hidden fees?</h3>
+                    <p>No hidden fees! The price you see is the price you pay. Delivery is free on orders over RWF 50,000 or with active subscriptions. Any additional fees are clearly disclosed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Help -->
+    <section class="quick-help">
+        <div class="container">
+            <h2>Still Need Help?</h2>
+            <p>Can't find the answer you're looking for? Our customer service team is here to help!</p>
+            <div class="help-options">
+                <div class="help-card">
+                    <div class="help-icon">☎️</div>
+                    <h3>Call Us</h3>
+                    <p>0787390669 / 0788496959</p>
+                    <p>Mon-Fri: 8AM-6PM</p>
+                    <a href="tel:0787390669" class="btn btn-primary">Call 0787390669 / 0788496959</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p>Chat with AI assistant</p>
+                    <p>Available 24/7</p>
+                    <button class="btn btn-secondary" onclick="document.getElementById('chatToggle').click()">Start Chat</button>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>Detailed inquiries</p>
+                    <p>Response within 24hrs</p>
+                    <a href="mailto:ntwariwesley@gmail.com" class="btn btn-secondary">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search FAQ -->
+    <section class="faq-search">
+        <div class="container">
+            <h2>Search Our FAQ</h2>
+            <div class="search-container">
+                <input type="text" id="faqSearch" placeholder="Type your question here..." class="search-input">
+                <button class="search-btn">🔍 Search</button>
+            </div>
+            <div id="searchResults" class="search-results">
+                <!-- Search results will appear here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Topics -->
+    <section class="popular-topics">
+        <div class="container">
+            <h2>Popular Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3>📦 Delivery Information</h3>
+                    <p>Areas we serve, delivery times, and scheduling options</p>
+                    <div class="topic-actions">
+                        <a href="customer-service.html#shipping-info" class="topic-link primary" title="View shipping zones and delivery timelines">
+                            View Shipping Policy <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="contact.html" class="topic-link secondary" title="Contact delivery support">
+                            Contact Delivery Team
+                        </a>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <h3>💳 Payment & Billing</h3>
+                    <p>Payment methods, billing cycles, and subscription management</p>
+                    <div class="topic-actions">
+                        <a href="pricing.html#payment-methods" class="topic-link primary" title="View payment methods and billing options">
+                            See Payment Methods <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="pricing.html" class="topic-link secondary" title="Review subscription plans">
+                            Manage Subscription
+                        </a>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <h3>♻️ Returns & Recycling</h3>
+                    <p>Bottle returns, recycling program, and environmental initiatives</p>
+                    <div class="topic-actions">
+                        <a href="customer-service.html#returns-policy" class="topic-link primary" title="View return and replacement guidance">
+                            Read Returns Policy <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="customer-service.html#size-guide" class="topic-link secondary" title="View bottle/container guide">
+                            Size & Container Guide
+                        </a>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <h3>📋 Order Management</h3>
+                    <p>Placing orders, modifications, and order tracking</p>
+                    <div class="topic-actions">
+                        <a href="customer-service.html#order-tracking" class="topic-link primary" title="Track your order and get order updates">
+                            Track My Order <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="order.html" class="topic-link secondary" title="Start a new order">
+                            Place New Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Have all your questions answered? Let's get you some fresh, pure water today!</p>
+            <a href="pricing.html" class="btn btn-large">View Pricing</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jibu Flow</h3>
+                    <p>Rwanda's trusted source for pure, refreshing water. Delivering quality and health to your doorstep.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61560424790782" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jiburwanda/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/jiburwanda" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/jibu-rwanda/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/jibu-flow">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="testimonials.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="customer-service.html#shipping-info">Shipping Info</a></li>
+                        <li><a href="customer-service.html#returns-policy">Returns Policy</a></li>
+                        <li><a href="customer-service.html#order-tracking">Order Tracking</a></li>
+                        <li><a href="customer-service.html#size-guide">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="customer-service.html#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="customer-service.html#terms-of-service">Terms of Service</a></li>
+                        <li><a href="customer-service.html#cookie-policy">Cookie Policy</a></li>
+                        <li><a href="customer-service.html#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Stay hydrated with our latest updates and offers!</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ❤️ in Rwanda</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Helper Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header" id="chatHeader">
+            <div class="chat-title">
+                <span class="chat-icon">🤖</span>
+                <span data-i18n="chat_title">Jibu Flow Assistant</span>
+            </div>
+            <div class="chat-modes">
+                <button class="mode-btn active" id="aiModeBtn" title="AI Assistant">AI</button>
+                <button class="mode-btn" id="liveModeBtn" title="Live Chat with Seller">Live</button>
+            </div>
+            <button class="chat-minimize" id="chatMinimize">-</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p data-i18n="chat_greeting">Hello! 👋 I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." data-i18n-placeholder="chat_input_placeholder">
+            <button class="chat-send" id="chatSend" data-i18n="chat_send">Send</button>
+        </div>
+    </div><!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" title="Open Chat">
+        <span>💬</span>
+    </button><!-- Popup Notifications -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content order-modal-content">
+            <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+            <div class="modal-body">
+                <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="orderProduct">Product</label>
+                        <input type="text" id="orderProduct" name="product" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderName">Your Name</label>
+                        <input type="text" id="orderName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderEmail">Your Email</label>
+                        <input type="email" id="orderEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPhone">Phone Number</label>
+                        <input type="text" id="orderPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderAddress">Delivery Address</label>
+                        <input type="text" id="orderAddress" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderQuantity">Quantity</label>
+                        <input type="number" id="orderQuantity" name="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentMethod">Preferred Payment Method</label>
+                        <select id="orderPaymentMethod" name="paymentMethod" required>
+                            <option value="Credit/Debit Card">Credit/Debit Card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="MoMo Pay">MoMo Pay</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentContact">Payment Account / Number</label>
+                        <input type="text" id="orderPaymentContact" name="paymentContact" placeholder="Card holder, PayPal email, or MoMo number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNotes">Notes (optional)</label>
+                        <textarea id="orderNotes" name="notes"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitOrderBtn">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="ai-helper.js"></script>
+    <script>
+    // Order Modal Logic
+    const orderModal = document.getElementById('orderModal');
+    const orderForm = document.getElementById('orderForm');
+    
+    function openOrderModal(product = '') {
+        if (product) {
+            document.getElementById('orderProduct').value = product;
+        }
+        orderModal.classList.add('show');
+    }
+    
+    function closeOrderModal() {
+        orderModal.classList.remove('show');
+    }
+    
+    orderForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(orderForm));
+        try {
+            const res = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                alert('thanks for work with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+                return;
+            }
+        } catch (err) {
+            console.warn('Server order API unavailable, falling back to Formspree', err);
+        }
+
+        // Fallback: send to Formspree
+        try {
+            const formspreeUrl = 'https://formspree.io/f/mdalwkqn';
+            const formData = new FormData();
+            formData.append('email', document.getElementById('orderEmail').value || '');
+            const messageParts = [];
+            messageParts.push(`Product: ${data.product || ''}`);
+            messageParts.push(`Name: ${data.name || ''}`);
+            messageParts.push(`Phone: ${data.phone || ''}`);
+            messageParts.push(`Address: ${data.address || ''}`);
+            messageParts.push(`Quantity: ${data.quantity || ''}`);
+            messageParts.push(`Payment Method: ${data.paymentMethod || ''}`);
+            messageParts.push(`Payment Account/Number: ${data.paymentContact || ''}`);
+            messageParts.push(`Notes: ${data.notes || ''}`);
+            formData.append('message', messageParts.join('\n'));
+            formData.append('_subject', `New Order: ${data.product || ''}`);
+            const resp = await fetch(formspreeUrl, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+            if (resp.ok) {
+                alert('thanks for work with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+            } else {
+                alert('Failed to place order. Please try again later.');
+            }
+        } catch (err) {
+            console.error('Formspree fallback failed', err);
+            alert('Failed to place order. Network error.');
+        }
+    });
+    </script>
+    <script src="theme.js"></script>
+    <script src="i18n.js"></script>
+</script>
+ 
+</body>
+</html>
+
+
+
+
+
+

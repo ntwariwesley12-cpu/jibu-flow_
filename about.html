@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibu Flow Water</title>
+    <meta name="description" content="Learn about Jibu Flow's mission to provide pure, clean water across Rwanda. Founded by KABOOKYA Milly in 2026.">
+    <meta name="keywords" content="about Jibu Flow, water company Rwanda, clean water mission, KABOOKYA Milly">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Jibu Flow - Premium Drinking Water">
+    <meta property="og:description" content="Rwanda's trusted source for pure water since 2026">
+    <meta property="og:image" content="https://jibuflow.rw/images/about-og.jpg">
+
+    <link rel="stylesheet" href="professional.css">
+    <link rel="stylesheet" href="product-style.css">
+    <link rel="stylesheet" href="ai-helper.css">
+    <style>
+        .about-videos {
+            padding: 48px 0;
+        }
+        .about-videos h2 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            border-radius: 12px;
+        }
+        .video-fallback {
+            margin-top: 8px;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .video-fallback a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+        .video-fallback a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/jibu-flow" class="logo-link">
+                    <img src="assets/logo.svg" alt="Jibu Flow" class="site-logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/jibu-flow" data-i18n="nav_home">Home</a></li>
+                <li><a href="about.html" class="active" data-i18n="nav_about">About</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Products</a></li>
+                <li><a href="pricing.html" data-i18n="nav_pricing">Pricing</a></li>
+                <li><a href="testimonials.html" data-i18n="nav_reviews">Reviews</a></li>
+                <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="settings.html" data-i18n="nav_settings">Settings</a></li>
+                <li><a href="order.html" class="btn btn-primary" onclick="if (typeof openOrderModal === 'function') { event.preventDefault(); openOrderModal(); }" data-i18n="order_now">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Jibu Flow</h2>
+                    <p><strong>Founded by KABOOKYA Milly</strong></p>
+                    <p>Jibu Flow is Rwanda's premier bottled water company, committed to providing the purest, most refreshing drinking water to our customers. Founded in 2026, we've been serving communities across Rwanda with our advanced purification technology and eco-friendly practices.</p>
+                    <p>Our mission is to make clean, healthy water accessible to everyone while protecting our environment through sustainable packaging and responsible water sourcing.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>50,000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1M+</h3>
+                            <p>Bottles Delivered</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Pure & Tested</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-img-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>From Vision to Reality</h3>
+                    <p>Founded by visionary entrepreneur KABOOKYA Milly, Jibu Flow began with a simple yet powerful idea: every Rwandan deserves access to clean, safe drinking water. What started as a small operation in Kigali has grown into Rwanda's most trusted water delivery service.</p>
+
+                    <h3>Commitment to Quality</h3>
+                    <p>We use state-of-the-art purification technology that removes impurities while preserving essential minerals. Every bottle undergoes rigorous testing to ensure it meets the highest standards of purity and safety.</p>
+
+                    <h3>Environmental Responsibility</h3>
+                    <p>Sustainability is at the core of everything we do. Our bottles are 100% recyclable, and we actively participate in community clean-up initiatives across Rwanda.</p>
+                </div>
+                <div class="story-image">
+                    <div class="story-img-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image"></div>
+                    <h3>KABOOKYA Milly</h3>
+                    <p>Founder & CEO</p>
+                    <p>Passionate entrepreneur with a vision to provide clean water solutions across Rwanda.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image"></div>
+                    <h3>vicky komukyae</h3>
+                    <p>Operations Manager</p>
+                    <p>Ensures smooth delivery operations and customer satisfaction.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image"></div>
+                    <h3>KANYONI AIME</h3>
+                    <p>CEO 2</p>
+                    <p>Supports the company's vision and community initiatives.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image"></div>
+                    <h3>Quality Team</h3>
+                    <p>Water Testing Specialists</p>
+                    <p>Dedicated professionals ensuring every bottle meets our high standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="about-videos">
+        <div class="container">
+            <h2>Our Videos</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/VM1wh0NDGpY" title="Jibu Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/aXImu7_Th30?start=69" title="Jibu Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.instagram.com/reel/DVltQo6iA8U/embed"
+                        title="Jibu Video 3 (Instagram Reel)"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    <p class="video-fallback">
+                        <a href="https://www.instagram.com/reel/DVltQo6iA8U/" target="_blank" rel="noopener noreferrer">
+                            Visit Instagram
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join the Jibu Flow Family</h2>
+            <p>Experience the difference pure water makes in your daily life</p>
+            <a href="products.html" class="btn btn-large">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jibu Flow Water</h3>
+                    <p>Rwanda's trusted source for pure, refreshing water. Delivering quality and health to your doorstep.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61560424790782" class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jiburwanda/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/jiburwanda" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/jibu-rwanda/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/jibu-flow">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="customer-service.html#shipping-info">Shipping Info</a></li>
+                        <li><a href="customer-service.html#returns-policy">Returns Policy</a></li>
+                        <li><a href="customer-service.html#order-tracking">Order Tracking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="customer-service.html#privacy-policy">Privacy Policy</a></li>
+                        <li><a href="customer-service.html#terms-of-service">Terms of Service</a></li>
+                        <li><a href="customer-service.html#cookie-policy">Cookie Policy</a></li>
+                        <li><a href="customer-service.html#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Stay hydrated with our latest updates and offers!</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ❤️ in Rwanda</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Helper Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header" id="chatHeader">
+            <div class="chat-title">
+                <span class="chat-icon">🤖</span>
+                <span data-i18n="chat_title">Jibu Flow Assistant</span>
+            </div>
+            <div class="chat-modes">
+                <button class="mode-btn active" id="aiModeBtn" title="AI Assistant">AI</button>
+                <button class="mode-btn" id="liveModeBtn" title="Live Chat with Seller">Live</button>
+            </div>
+            <button class="chat-minimize" id="chatMinimize">-</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p data-i18n="chat_greeting">Hello! 👋 I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." data-i18n-placeholder="chat_input_placeholder">
+            <button class="chat-send" id="chatSend" data-i18n="chat_send">Send</button>
+        </div>
+    </div><!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" title="Open Chat">
+        <span>💬</span>
+    </button><!-- Popup Notifications -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content order-modal-content">
+            <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+            <div class="modal-body">
+                <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="orderProduct">Product</label>
+                        <input type="text" id="orderProduct" name="product" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderName">Your Name</label>
+                        <input type="text" id="orderName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderEmail">Your Email</label>
+                        <input type="email" id="orderEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPhone">Phone Number</label>
+                        <input type="text" id="orderPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderAddress">Delivery Address</label>
+                        <input type="text" id="orderAddress" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderQuantity">Quantity</label>
+                        <input type="number" id="orderQuantity" name="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentMethod">Preferred Payment Method</label>
+                        <select id="orderPaymentMethod" name="paymentMethod" required>
+                            <option value="Credit/Debit Card">Credit/Debit Card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="MoMo Pay">MoMo Pay</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPaymentContact">Payment Account / Number</label>
+                        <input type="text" id="orderPaymentContact" name="paymentContact" placeholder="Card holder, PayPal email, or MoMo number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNotes">Notes (optional)</label>
+                        <textarea id="orderNotes" name="notes"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitOrderBtn">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="ai-helper.js"></script>
+    <script>
+    // Order Modal Logic
+    const orderModal = document.getElementById('orderModal');
+    const orderForm = document.getElementById('orderForm');
+    
+    function openOrderModal(product = '') {
+        if (product) {
+            document.getElementById('orderProduct').value = product;
+        }
+        orderModal.classList.add('show');
+    }
+    
+    function closeOrderModal() {
+        orderModal.classList.remove('show');
+    }
+    
+    orderForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(orderForm));
+        try {
+            const res = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                alert('thanks for work with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+                return;
+            }
+        } catch (err) {
+            console.warn('Server order API unavailable, falling back to Formspree', err);
+        }
+
+        // Fallback: send to Formspree
+        try {
+            const formspreeUrl = 'https://formspree.io/f/mdalwkqn';
+            const formData = new FormData();
+            formData.append('email', document.getElementById('orderEmail').value || '');
+            const messageParts = [];
+            messageParts.push(`Product: ${data.product || ''}`);
+            messageParts.push(`Name: ${data.name || ''}`);
+            messageParts.push(`Phone: ${data.phone || ''}`);
+            messageParts.push(`Address: ${data.address || ''}`);
+            messageParts.push(`Quantity: ${data.quantity || ''}`);
+            messageParts.push(`Payment Method: ${data.paymentMethod || ''}`);
+            messageParts.push(`Payment Account/Number: ${data.paymentContact || ''}`);
+            messageParts.push(`Notes: ${data.notes || ''}`);
+            formData.append('message', messageParts.join('\n'));
+            formData.append('_subject', `New Order: ${data.product || ''}`);
+            const resp = await fetch(formspreeUrl, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+            if (resp.ok) {
+                alert('thanks for work with jibu flow');
+                closeOrderModal();
+                orderForm.reset();
+            } else {
+                alert('Failed to place order. Please try again later.');
+            }
+        } catch (err) {
+            console.error('Formspree fallback failed', err);
+            alert('Failed to place order. Network error.');
+        }
+    });
+    </script>
+    <script src="theme.js"></script>
+    <script src="i18n.js"></script>
+</body>
+</html>          
+
+
+
+
+
+
+
+
+
+
+
+
+

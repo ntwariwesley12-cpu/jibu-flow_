@@ -1,0 +1,24 @@
+{
+  "name": "jibu-flow",
+  "version": "1.0.0",
+  "description": "Jibu Flow Water - Premium Drinking Water",
+  "main": "server.js",
+  "scripts": {
+    "start": "set PORT=3001&& node server.js",
+    "dev": "set PORT=3001&& nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.4",
+    "openai": "^4.42.0",
+    "socket.io": "^4.6.1",
+    "stripe": "^13.10.0",
+    "twilio": "^4.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

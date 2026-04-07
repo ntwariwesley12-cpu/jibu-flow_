@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test SMS Notification</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #218838; }
+        .message { margin-top: 20px; padding: 15px; border-radius: 5px; display: none; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>🛒 Test Order SMS</h1>
+    <p>When you submit this form, you should receive an SMS on +250787390669</p>
+    
+    <form id="orderForm">
+        <div class="form-group">
+            <label for="product">Product:</label>
+            <select id="product" name="product" required>
+                <option value="Jibu Water Bottle 1L">Jibu Water Bottle 1L</option>
+                <option value="Jibu Water Bottle 500ml">Jibu Water Bottle 500ml</option>
+                <option value="Jibu Starter Pack">Jibu Starter Pack</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+2507XXXXXXXX" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="address">Delivery Address:</label>
+            <input type="text" id="address" name="address" placeholder="Kigali, Rwanda" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+        </div>
+        
+        <button type="submit">Place Test Order</button>
+    </form>
+    
+    <div id="message" class="message"></div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const messageDiv = document.getElementById('message');
+            messageDiv.style.display = 'block';
+            messageDiv.className = 'message';
+            messageDiv.textContent = 'Sending order...';
+            
+            const formData = {
+                product: document.getElementById('product').value,
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                quantity: document.getElementById('quantity').value
+            };
+            
+            try {
+                const response = await fetch('/api/orders', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    messageDiv.className = 'message success';
+                    messageDiv.textContent = '✅ ' + result.message + ' Check your phone (+250787390669)!';
+                    document.getElementById('orderForm').reset();
+                } else {
+                    messageDiv.className = 'message error';
+                    messageDiv.textContent = '❌ ' + result.message;
+                }
+            } catch (error) {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = '❌ Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

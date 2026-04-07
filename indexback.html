@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jibu Flow Water</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<h1>Order Water</h1>
+
+<form id="orderForm">
+  <input type="text" id="name" placeholder="Full Name" required />
+  <input type="tel" id="phone" placeholder="Phone" required />
+  <textarea id="address" placeholder="Address" required></textarea>
+
+  <select id="product">
+    <option>500ml Bottle</option>
+    <option>1L Bottle</option>
+    <option>5L Container</option>
+  </select>
+
+  <input type="number" id="quantity" value="1" min="1"/>
+  <button type="submit">Place Order</button>
+</form>
+
+<h2>Newsletter</h2>
+<input type="email" id="subEmail" placeholder="Your Email"/>
+<button onclick="subscribe()">Subscribe</button>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: name.value,
+    phone: phone.value,
+    address: address.value,
+    product: product.value,
+    quantity: quantity.value
+  };
+
+  await fetch("/api/order", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  alert("Order sent!");
+});
+
+async function subscribe() {
+  await fetch("/api/subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: subEmail.value })
+  });
+
+  alert("Subscribed!");
+}
+</script>
+
+ 
+</body>
+</html>
+
+
+
+
+
+

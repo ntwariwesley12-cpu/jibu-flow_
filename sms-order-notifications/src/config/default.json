@@ -1,0 +1,12 @@
+{
+    "twilio": {
+        "accountSid": "YOUR_TWILIO_ACCOUNT_SID",
+        "authToken": "YOUR_TWILIO_AUTH_TOKEN",
+        "fromNumber": "YOUR_TWILIO_PHONE_NUMBER",
+        "toNumber": "YOUR_RECEIVING_PHONE_NUMBER"
+    },
+    "notification": {
+        "smsEnabled": true,
+        "smsMessage": "A new order has been placed. Order details: {{orderDetails}}"
+    }
+}

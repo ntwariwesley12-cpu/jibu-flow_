@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibu Flow Water</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #chatContainer { max-width: 600px; margin: 0 auto; }
+        #messages { border: 1px solid #ccc; height: 300px; overflow-y: auto; padding: 10px; margin-bottom: 10px; }
+        .message { margin-bottom: 10px; padding: 8px; border-radius: 5px; }
+        .user-message { background-color: #007bff; color: white; text-align: right; }
+        .bot-message { background-color: #f1f1f1; color: black; }
+        #inputContainer { display: flex; gap: 10px; }
+        #messageInput { flex: 1; padding: 8px; }
+        #sendButton { padding: 8px 16px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        #sendButton:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h1>Jibu Flow AI Chat Test</h1>
+    <div id="chatContainer">
+        <div id="messages"></div>
+        <div id="inputContainer">
+            <input type="text" id="messageInput" placeholder="Ask about Jibu Flow Water..." />
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <script>
+// Website knowledge base
+const websiteInfo = {
+  company: {
+    name: "Jibu Flow Water",
+    founder: "KABOOKYA Milly",
+    founded: "2020",
+    location: "Rwanda",
+    mission: "To make clean, healthy water accessible to everyone while protecting our environment through sustainable packaging and responsible water sourcing",
+    stats: {
+      customers: "50,000+",
+      bottles: "1M+",
+      purity: "100%"
+    }
+  },
+  products: {
+    "500ml": { price: "$1.99", description: "Perfect for on-the-go hydration" },
+    "1L": { price: "$2.99", description: "Great for daily consumption" },
+    "5L": { price: "$7.99", description: "Best value for families" },
+    "24-pack": { price: "$39.99", description: "Bulk purchase for offices" },
+    dispenser: { price: "$49.99", description: "5-gallon dispenser system" },
+    subscription: { price: "From $24.99/mo", description: "Never run out of water" }
+  },
+  pricing: {
+    "one-time": { price: "$2.99", includes: "1L Pure Water, Free Shipping on orders 6+, Quality Guarantee" },
+    monthly: { price: "$24.99/month", includes: "4 x 1L Bottles, Free Delivery, 10% Discount, Priority Support" },
+    yearly: { price: "$249.99/year", includes: "48 x 1L Bottles, Free Premium Delivery, 20% Discount, VIP Support" }
+  },
+  features: [
+    "100% Pure water with multi-stage filtration",
+    "Fast delivery (same-day in selected areas)",
+    "Eco-friendly 100% recyclable bottles",
+    "Health tested and lab certified",
+    "Affordable pricing with subscription discounts",
+    "24/7 customer support"
+  ],
+  delivery: "Same-day delivery available in selected areas of Rwanda, especially Kigali region",
+  contact: "Available through the contact form on the website or customer support channels"
+};
+
+// Generate AI response based on user message
+function generateResponse(message) {
+  const lowerMessage = message.toLowerCase();
+
+  // Company information
+  if (lowerMessage.includes('who') && lowerMessage.includes('founder')) {
+    return `Jibu Flow Water was founded by ${websiteInfo.company.founder} in ${websiteInfo.company.founded}.`;
+  }
+
+  if (lowerMessage.includes('about') || lowerMessage.includes('company')) {
+    return `${websiteInfo.company.name} is Rwanda's premier bottled water company, founded by ${websiteInfo.company.founder} in ${websiteInfo.company.founded}. Our mission is ${websiteInfo.company.mission}. We have served over ${websiteInfo.company.stats.customers} happy customers and delivered more than ${websiteInfo.company.stats.bottles} bottles.`;
+  }
+
+  // Products
+  if (lowerMessage.includes('product') || lowerMessage.includes('bottle') || lowerMessage.includes('size')) {
+    let response = "We offer several product options:\n\n";
+    Object.entries(websiteInfo.products).forEach(([key, value]) => {
+      response += `• ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value.price} - ${value.description}\n`;
+    });
+    return response;
+  }
+
+  // Pricing
+  if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('subscription')) {
+    if (lowerMessage.includes('monthly')) {
+      return `Our Monthly Plan costs ${websiteInfo.pricing.monthly.price} and includes: ${websiteInfo.pricing.monthly.includes}`;
+    }
+    if (lowerMessage.includes('yearly')) {
+      return `Our Yearly Plan costs ${websiteInfo.pricing.yearly.price} and includes: ${websiteInfo.pricing.yearly.includes}`;
+    }
+    if (lowerMessage.includes('one-time') || lowerMessage.includes('single')) {
+      return `One-time purchase: ${websiteInfo.pricing["one-time"].price} for 1L Pure Water`;
+    }
+
+    let response = "Our pricing options:\n\n";
+    Object.entries(websiteInfo.pricing).forEach(([key, value]) => {
+      response += `• ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value.price}\n`;
+    });
+    return response;
+  }
+
+  // Features
+  if (lowerMessage.includes('feature') || lowerMessage.includes('why') || lowerMessage.includes('choose')) {
+    let response = "Here are the key features that make Jibu Flow special:\n\n";
+    websiteInfo.features.forEach(feature => {
+      response += `• ${feature}\n`;
+    });
+    return response;
+  }
+
+  // Delivery
+  if (lowerMessage.includes('deliver') || lowerMessage.includes('shipping')) {
+    return websiteInfo.delivery;
+  }
+
+  // Contact
+  if (lowerMessage.includes('contact') || lowerMessage.includes('support')) {
+    return `You can reach us through the contact form on our website or our 24/7 customer support. ${websiteInfo.contact}`;
+  }
+
+  // Location
+  if (lowerMessage.includes('where') || lowerMessage.includes('location') || lowerMessage.includes('rwanda')) {
+    return "Jibu Flow operates primarily in Rwanda, with a focus on the Kigali region and surrounding areas.";
+  }
+
+  // Quality/Purity
+  if (lowerMessage.includes('pure') || lowerMessage.includes('quality') || lowerMessage.includes('test')) {
+    return "All our water undergoes multi-stage filtration and is 100% pure and lab tested daily to ensure the highest quality standards.";
+  }
+
+  // Eco-friendly
+  if (lowerMessage.includes('eco') || lowerMessage.includes('environment') || lowerMessage.includes('recycle')) {
+    return "We're committed to environmental sustainability with 100% recyclable bottles and responsible water sourcing practices.";
+  }
+
+  // Default responses
+  if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+    return "Hello! I'm the Jibu Flow assistant. I can help you learn about our products, pricing, delivery, and more. What would you like to know?";
+  }
+
+  if (lowerMessage.includes('thank')) {
+    return "You're welcome! Is there anything else I can help you with about Jibu Flow Water?";
+  }
+
+  // Generic fallback
+  return "I'd be happy to help you with information about Jibu Flow Water! You can ask me about our products, pricing, delivery, company information, or any other questions about our services.";
+}
+
+// DOM elements
+const messagesDiv = document.getElementById('messages');
+const messageInput = document.getElementById('messageInput');
+const sendButton = document.getElementById('sendButton');
+
+// Add message to chat
+function addMessage(text, type) {
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${type}-message`;
+  messageDiv.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
+  messagesDiv.appendChild(messageDiv);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+// Send message function
+async function sendMessage() {
+  const message = messageInput.value.trim();
+  if (!message) return;
+
+  // Add user message
+  addMessage(message, 'user');
+  messageInput.value = '';
+
+  // Show typing indicator
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'message bot-message';
+  typingDiv.innerHTML = '<p><em>Typing...</em></p>';
+  messagesDiv.appendChild(typingDiv);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+  // Simulate API delay
+  setTimeout(() => {
+    // Remove typing indicator
+    messagesDiv.removeChild(typingDiv);
+
+    // Generate response
+    const response = generateResponse(message);
+    addMessage(response, 'bot');
+  }, 500 + Math.random() * 1000);
+}
+
+// Event listeners
+sendButton.addEventListener('click', sendMessage);
+messageInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') sendMessage();
+});
+
+// Initial greeting
+setTimeout(() => {
+  addMessage("Hello! I'm the Jibu Flow assistant. I can help you learn about our products, pricing, delivery, and more. What would you like to know?", 'bot');
+}, 1000);
+    </script>
+ 
+</body>
+</html></content>
+<link rel="stylesheet" href="professional.css">
+<script src="main.js"></script>
+<script src="ai-helper.js"></script>
+
+<a href="/about.html">About</a>
+<a href="/products.html">Products</a>
+<a href="/contact.html">Contact</a>
+
+
+
+
+
+
+

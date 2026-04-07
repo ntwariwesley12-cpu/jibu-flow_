@@ -1,0 +1,20 @@
+{
+  "name": "sms-order-notifications",
+  "version": "1.0.0",
+  "description": "A project to send SMS notifications when an order is made using Twilio.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "twilio": "^3.67.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
