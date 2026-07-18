@@ -1089,10 +1089,10 @@ p {
 .gallery-image.subscription { height: 125px; }
 
 .gallery-image.external {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     border-radius: 16px;
-    padding: 10px;
+    padding: 16px;
     background: #f8fbff;
     border: 1px solid #dbeafe;
     box-shadow: 0 4px 12px rgba(2, 6, 23, 0.08);
@@ -1104,6 +1104,23 @@ p {
     object-fit: contain;
     display: block;
 }
+
+@media (max-width: 768px) {
+    .gallery-image.external {
+        width: 160px;
+        height: 160px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-image.external {
+        width: 130px;
+        height: 130px;
+        padding: 10px;
+    }
+}
+
 
 .gallery-price {
     font-size: 1.3rem;
