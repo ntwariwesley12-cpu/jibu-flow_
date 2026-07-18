@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,7 +83,7 @@ function generateResponse(message) {
   if (lowerMessage.includes('product') || lowerMessage.includes('bottle') || lowerMessage.includes('size')) {
     let response = "We offer several product options:\n\n";
     Object.entries(websiteInfo.products).forEach(([key, value]) => {
-      response += `â€¢ ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value.price} - ${value.description}\n`;
+      response += `• ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value.price} - ${value.description}\n`;
     });
     return response;
   }
@@ -102,7 +102,7 @@ function generateResponse(message) {
 
     let response = "Our pricing options:\n\n";
     Object.entries(websiteInfo.pricing).forEach(([key, value]) => {
-      response += `â€¢ ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value.price}\n`;
+      response += `• ${key.charAt(0).toUpperCase() + key.slice(1)}: ${value.price}\n`;
     });
     return response;
   }
@@ -111,7 +111,7 @@ function generateResponse(message) {
   if (lowerMessage.includes('feature') || lowerMessage.includes('why') || lowerMessage.includes('choose')) {
     let response = "Here are the key features that make Jibu Flow special:\n\n";
     websiteInfo.features.forEach(feature => {
-      response += `â€¢ ${feature}\n`;
+      response += `• ${feature}\n`;
     });
     return response;
   }
