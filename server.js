@@ -277,13 +277,21 @@ app.post('/api/payments/stripe-intent', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3005;
-server.on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    console.error(`Port ${PORT} is already in use. If you have another instance running, stop it and restart this server.`);
-    process.exit(1);
-  }
-  console.error('Server error:', err);
-  process.exit(1);
-});
 
-server.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// Export for Vercel serverless (no port binding in serverless env)
+module.exports = app;
+module.exports.default = app;
+
+// Only bind a port when running locally (not inside Vercel/serverless)
+if (process.env.VERCEL !== '1' && !process.env.AWS_LAMBDA_FUNCTION_VERSION && !process.env.LAMBDA_TASK_ROOT) {
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`Port ${PORT} is already in use. If you have another instance running, stop it and restart this server.`);
+      process.exit(1);
+    }
+    console.error('Server error:', err);
+    process.exit(1);
+  });
+
+  server.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+}
