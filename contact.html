@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta charset="UTF-8">
@@ -56,6 +56,7 @@
         opacity: 1;
     }
     </style>
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -66,6 +67,7 @@
                     <img src="assets/logo.svg" alt="Jibu Flow" class="site-logo">
                 </a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="/jibu-flow" data-i18n="nav_home">Home</a></li>
                 <li><a href="about.html" data-i18n="nav_about">About</a></li>
@@ -95,29 +97,29 @@
                 <div class="contact-info">
                     <h2>Contact Information</h2>
                     <div class="contact-item">
-                        <h3>☎️ Phone</h3>
+                        <h3>?? Phone</h3>
                         <p>0787390669 / 0788496959</p>
                         <p>Mon - Fri: 8 AM - 6 PM</p>
                         <p>Sat: 9 AM - 4 PM</p>
                     </div>
                     <div class="contact-item">
-                        <h3>✉️ Email</h3>
+                        <h3>?? Email</h3>
                         <p>ntwariwesley@gmail.com</p>
                         <p>We respond within 24 hours</p>
                     </div>
                     <div class="contact-item">
-                        <h3>📍 Office Address</h3>
+                        <h3>?? Office Address</h3>
                         <p>KG 123 St, Kigali</p>
                         <p>Rwanda</p>
                     </div>
                     <div class="contact-item">
-                        <h3>🕒 Business Hours</h3>
+                        <h3>?? Business Hours</h3>
                         <p>Monday - Friday: 8 AM - 6 PM</p>
                         <p>Saturday: 9 AM - 4 PM</p>
                         <p>Sunday: Closed</p>
                     </div>
                     <div class="contact-item">
-                        <h3>🗺️ Delivery Areas</h3>
+                        <h3>??? Delivery Areas</h3>
                         <p>Kigali Metro Area</p>
                         <p>Provincial areas available</p>
                         <p>Contact for coverage details</p>
@@ -192,9 +194,9 @@
             <h2>Find Us</h2>
             <div class="map-container">
                 <div class="map-placeholder">
-                    <p>📌 KG 123 St, Kigali, Rwanda</p>
-                    <p>🏢 Office Location</p>
-                    <p>🚛 Delivery Service Area: Kigali Metro</p>
+                    <p>?? KG 123 St, Kigali, Rwanda</p>
+                    <p>?? Office Location</p>
+                    <p>?? Delivery Service Area: Kigali Metro</p>
                 </div>
             </div>
         </div>
@@ -206,19 +208,19 @@
             <h2>Quick Contact Options</h2>
             <div class="contact-options">
                 <div class="option-card">
-                    <div class="option-icon">📞</div>
+                    <div class="option-icon">??</div>
                     <h3>Call Us Now</h3>
                     <p>For immediate assistance: 0787390669 / 0788496959</p>
                     <a href="tel:0787390669" class="btn btn-primary">Call 0787390669 / 0788496959</a>
                 </div>
                 <div class="option-card">
-                    <div class="option-icon">💬</div>
+                    <div class="option-icon">??</div>
                     <h3>Live Chat</h3>
                     <p>Chat with our AI assistant</p>
                     <button class="btn btn-secondary" onclick="document.getElementById('chatToggle').click()">Start Chat</button>
                 </div>
                 <div class="option-card">
-                    <div class="option-icon">📧</div>
+                    <div class="option-icon">??</div>
                     <h3>Email Support</h3>
                     <p>Get detailed help via email</p>
                     <a href="mailto:ntwariwesley@gmail.com" class="btn btn-secondary">Send Email</a>
@@ -389,7 +391,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ❤️ in Rwanda</p>
+                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ?? in Rwanda</p>
             </div>
         </div>
     </footer>
@@ -398,7 +400,7 @@
     <div class="chat-widget" id="chatWidget">
         <div class="chat-header" id="chatHeader">
             <div class="chat-title">
-                <span class="chat-icon">🤖</span>
+                <span class="chat-icon">??</span>
                 <span data-i18n="chat_title">Jibu Flow Assistant</span>
             </div>
             <div class="chat-modes">
@@ -409,7 +411,7 @@
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="message bot-message">
-                <p data-i18n="chat_greeting">Hello! 👋 I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
+                <p data-i18n="chat_greeting">Hello! ?? I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
             </div>
         </div>
         <div class="chat-input-area">
@@ -418,7 +420,7 @@
         </div>
     </div><!-- Chat Toggle Button -->
     <button class="chat-toggle" id="chatToggle" title="Open Chat">
-        <span>💬</span>
+        <span>??</span>
     </button><!-- Popup Notifications -->
     <div class="notification-container" id="notificationContainer"></div>
 
@@ -570,6 +572,24 @@
     <script src="i18n.js"></script>
 </script>
  
+    <script>
+      (function () {
+        var toggle = document.querySelector('.nav-toggle');
+        var links = document.querySelector('.nav-links');
+        if (toggle && links) {
+          toggle.addEventListener('click', function () {
+            var open = links.classList.toggle('show');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+          links.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () {
+              links.classList.remove('show');
+              toggle.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      })();
+    </script>
 </body>
 </html>
 

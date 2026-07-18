@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta charset="UTF-8">
@@ -64,6 +64,7 @@
             display: block;
         }
     </style>
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -74,6 +75,7 @@
                     <img src="assets/logo.svg" alt="Jibu Flow" class="site-logo">
                 </a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="/jibu-flow" data-i18n="nav_home">Home</a></li>
                 <li><a href="about.html" data-i18n="nav_about">About</a></li>
@@ -224,32 +226,32 @@
             <h2>Why Choose Our Products?</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">💧</div>
+                    <div class="feature-icon">??</div>
                     <h3>100% Pure</h3>
                     <p>Multi-stage filtration system removes impurities while retaining essential minerals</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🚚</div>
+                    <div class="feature-icon">??</div>
                     <h3>Fast Delivery</h3>
                     <p>Same-day delivery available in selected areas. Fresh water at your door</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">♻️</div>
+                    <div class="feature-icon">??</div>
                     <h3>Eco-Friendly</h3>
                     <p>100% recyclable bottles. We're committed to reducing plastic waste</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🏥</div>
+                    <div class="feature-icon">??</div>
                     <h3>Health Tested</h3>
                     <p>Lab certified and tested daily to ensure highest quality standards</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💰</div>
+                    <div class="feature-icon">??</div>
                     <h3>Affordable</h3>
                     <p>Competitive pricing with subscription discounts up to 20%</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⭐</div>
+                    <div class="feature-icon">?</div>
                     <h3>Customer Support</h3>
                     <p>24/7 customer service ready to help with any questions</p>
                 </div>
@@ -317,7 +319,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ❤️ in Rwanda</p>
+                <p>&copy; 2026 Jibu Flow Water. All rights reserved. | Founded by KABOOKYA Milly | Made with ?? in Rwanda</p>
             </div>
         </div>
     </footer>
@@ -326,7 +328,7 @@
     <div class="chat-widget" id="chatWidget">
         <div class="chat-header" id="chatHeader">
             <div class="chat-title">
-                <span class="chat-icon">🤖</span>
+                <span class="chat-icon">??</span>
                 <span data-i18n="chat_title">Jibu Flow Assistant</span>
             </div>
             <div class="chat-modes">
@@ -337,7 +339,7 @@
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="message bot-message">
-                <p data-i18n="chat_greeting">Hello! 👋 I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
+                <p data-i18n="chat_greeting">Hello! ?? I'm your Jibu Flow Assistant. How can I help you today? I can answer questions about our products, pricing, delivery, or help you place an order!</p>
             </div>
         </div>
         <div class="chat-input-area">
@@ -346,7 +348,7 @@
         </div>
     </div><!-- Chat Toggle Button -->
     <button class="chat-toggle" id="chatToggle" title="Open Chat">
-        <span>💬</span>
+        <span>??</span>
     </button><!-- Popup Notifications -->
     <div class="notification-container" id="notificationContainer"></div>
 
@@ -601,6 +603,24 @@
     </script>
     <script src="theme.js"></script>
     <script src="i18n.js"></script>
+    <script>
+      (function () {
+        var toggle = document.querySelector('.nav-toggle');
+        var links = document.querySelector('.nav-links');
+        if (toggle && links) {
+          toggle.addEventListener('click', function () {
+            var open = links.classList.toggle('show');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+          links.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () {
+              links.classList.remove('show');
+              toggle.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      })();
+    </script>
 </body>
 </html>
 
