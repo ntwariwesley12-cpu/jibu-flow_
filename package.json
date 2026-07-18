@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Jibu Flow Water - Premium Drinking Water",
   "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "set PORT=3001&& node server.js",
     "dev": "set PORT=3001&& nodemon server.js"
