@@ -62,7 +62,6 @@
             box-shadow: 0 8px 20px rgba(10, 61, 98, 0.18);
         }
     </style>
-    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -71,7 +70,6 @@
             <div class="logo">
                 <a href="/jibu-flow">Jibu Flow</a>
             </div>
-            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="/jibu-flow" data-i18n="nav_home">Home</a></li>
                 <li><a href="about.html" data-i18n="nav_about">About</a></li>
@@ -471,24 +469,6 @@
     <script src="i18n.js"></script>
 </script>
  
-    <script>
-      (function () {
-        var toggle = document.querySelector('.nav-toggle');
-        var links = document.querySelector('.nav-links');
-        if (toggle && links) {
-          toggle.addEventListener('click', function () {
-            var open = links.classList.toggle('show');
-            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-          });
-          links.querySelectorAll('a').forEach(function (a) {
-            a.addEventListener('click', function () {
-              links.classList.remove('show');
-              toggle.setAttribute('aria-expanded', 'false');
-            });
-          });
-        }
-      })();
-    </script>
 </body>
 </html>
 
